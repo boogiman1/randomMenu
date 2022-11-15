@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 점심은 뭔가요?</title>
+    <style>
+        body{overflow-y: hidden; overflow-x: hidden;}
+
+        .wrap{display: flex; flex-direction: column; align-items: center; margin: auto; text-align: center; background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); background-repeat: no-repeat; height: 100vh;}
+
+        .wrap>div{font-size: 24px;}
+
+        .menuBox{margin: 16px 0; font-size: 16px; letter-spacing: -1px;}
+
+        div span{display: block; color: red; font-weight: 700;}
+
+        button{background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); border: 0; width: 144px; height: 32px; border-radius: 16px; color: rgb(116, 61, 167); font-weight: 700; letter-spacing: -.5px; font-size: 14px; cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>오늘 점심은 뭔가요?</h1>
+        <div>오점뭐!!
+            <div class="menuBox">오늘 점심은 몰까요옹?</div>
+            <button>나를 클릭해쥬</button>
+        </div>
+    </div>
+    
+    <script>
+        let menu = ['소머리 국밥', '카레', '돈까스', '라멘', '만두전골', '만두국', '김치나배' ,'온면' ,'온반' ,'피자', '김치찜' ,'마라탕', '순대국' ,'마파두부' ,'햄버거' ,'치킨' ,'해물파전' , '냉면' , '제육볶음' ,'쭈꾸미' ,'된장찌개' ,'갈비탕' ,'설렁탕' ,'김치찌개' ,'뼈해장국' ,'닭볶음탕' ,'부대찌개' , '쌀국수' ,'칼국수' ,'잔치국수' ,'짜장면' ,'짬뽕' ,'볶음밥' ,'순두부찌개','동태찌개' ,'불고기' ,'우동' ,'콩국수' ,'초밥' ,'삼계탕', '게장', '대구탕' ,'추어탕']
+        let menuNum = menu.length
+        const btn = document.querySelector('button')
+        let menuName = document.querySelector('.menuBox')
+        
+        btn.addEventListener("click",function(){
+            // console.log(menu[2]);
+            let randomIdx = Math.floor(Math.random()*menuNum)
+            console.log(randomIdx, menuNum);
+
+            menuName.innerHTML = `<span>"${menu[randomIdx]}"</span>`
+        })
+    </script>
+</body>
+</html>
